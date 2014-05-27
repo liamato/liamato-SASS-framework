@@ -1,0 +1,36 @@
+/*=================================================================================*/
+/*! liamato SASS framework v1.0 | License: license.md | https://github.com/liamato */
+/*=================================================================================*/
+
+
+// Bienvenido a liamato Sass framework
+// En este archivo deverias centralizar tus imports.
+// Importa este archivo usando el siguiente HTML o equivalente:
+// <link href="tu-ruta/liamato-SASS-framework/css/main.css" media="all" rel="stylesheet" type="text/css" />
+//
+
+//=====================================================//
+//  Requerido
+//=====================================================//
+@import "_variables.scss";
+
+@import "_maps.scss";
+
+@import "_mixins.scss";
+
+// Es un framework para prevenir los defaults de los
+// navegadores y, en este caso, aplicar los estilos de
+// _maps.scss
+@import "normalize/_normalize.scss";
+
+
+
+//=====================================================//
+//  Opcional
+//=====================================================//
+@import "../lib/_placeholders.scss";
+
+// Fuente de www.fontfabric.com
+@import "../lib/_glyphicons.scss";
+
+@import "../doc/_doc.scss";

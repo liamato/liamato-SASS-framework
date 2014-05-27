@@ -1,0 +1,67 @@
+//====================================
+//	$MAPS
+//====================================
+
+
+
+//-------------------
+//	$colors
+//-------------------
+//
+// Definimos los colores estandares para la paguina
+// Si queremos el color por default podemos poner ""
+//
+
+$colors: (First: #333, Second: "", Third: #ccc, a/visited: "", a-hover/focus: "", p: "", h1: "", h2: "", h3: "", h4: "", h5: "", h6: "", glyphicon-bg: "#fff");
+
+
+
+//-------------------
+//	$font
+//-------------------
+//
+// Definimos las fuentes
+// Si queremos la fuente por default podemos poner null, nul, 0 o ""
+// Puedes añadir fuentes personalizadas y utilizar @include font(key_fuente);
+//
+
+$font-map: (default: "", code: "");
+
+
+
+//-------------------
+//	$font-size
+//-------------------
+//
+// Definimos las medidas de las fuentes en px
+// Si queremos la medida por default podemos poner null, nul, 0 o ""
+//
+
+$font-size: (default: "", p: "", a: "", h1: "", h2: "", h3: "", h4: "", h5: "", h6: "", code: "");
+
+
+
+//-------------------
+//	$colors-social
+//-------------------
+//
+// Definidos los colores de las principales redes sociales
+// ¡¡No tocar!!
+//
+
+$colors-social: (
+	fb: 		rgb(59, 89, 182), 
+	tw: 		rgb(64,153,255), 
+	google: 	rgb(221, 75, 57), 
+	youtube:	#FF3333, 
+	vimeo: 		#86B32D, 
+	instagram: 	#4E433C, 
+	spotify: 	rgb(129,183,26), 
+	soundcloud: #f76600, 
+	skype: 		rgb(18,165,244), 
+	tumblr: 	#2B4964, 
+	linkedin: 	#4875B4, 
+	pinterest: 	rgb(203, 32, 39), 
+	flickr: 	#FE0883, 
+	foursquare: #8FD400
+	);

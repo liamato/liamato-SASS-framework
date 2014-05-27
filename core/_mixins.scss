@@ -1,0 +1,262 @@
+//====================================
+//   $MIXINS
+//====================================
+
+
+// objective (px) / context (px) = result (em) 
+
+// Para obtener la medida de la fuente en em basdo en $font-size
+// $fs: font size (imput)
+// $mf: map font (default from maps)
+@mixin font-size($fs, $mf: default){
+	@if($mf == ""){
+		$fs: $fs / 16;
+	} @else{
+		$fs: $fs / map-get($font-size, $mf);
+	}
+    font-size: #{$fs}em;
+}
+
+// Para añadir funtes del map $font-map
+@mixin font($fnt){
+	@if $fnt == "default"{
+		font-family: #{$font}; 
+	} @else if $fnt == "code"{
+		font-family: $font-code
+	} @else{
+		font-family: #{map-get($font-map, $fnt)};
+	}
+
+}
+
+//Para obtener el color de $colors social
+@mixin social($social){
+	color: #{map-get($colors-social, $social)};
+}
+
+@mixin bg-color($col){
+	background-color: #{map-get($colors, $col)};
+}
+
+
+
+
+
+// Para crear media querys
+//
+// $m-feature1,
+// $m-feature2: (width | min-width | max-width | height | min-height 
+//				| max-height | device-width | min-device-width | max-device-width 
+//				| device-height | min-device-height | max-device-height 
+//				| aspect-ratio | min-aspect-ratio | max-aspect-ratio 
+//				| device-aspect-ratio | min-device-aspect-ratio 
+//				| max-device-aspect-ratio | color | min-color 
+//				| max-color | color-index | min-color-index 
+//				| max-color-index | monochrome | min-monochrome 
+//				| max-monochrome | resolution | min-resolution 
+//				| max-resolution | scan | grid
+//				);
+//
+// $m-feature1-val,
+// $m-feature2-val: ($bp1 | $bp2 | $bp3 | $bp4 | $bp5)
+//
+// $m-type: (all | aural | braille | handheld | print | projection | screen | tty | tv | embossed)
+//
+@mixin media($m-feature1: "min-width", $m-feature1-val: "", $m-type: "all", $m-feature2: "max-width", $m-feature2-val: ""){
+	@if $m-type != ""{
+		@if $m-feature2 != ""{
+			@if $m-feature2-val != ""{
+				@media #{$m-type} and (#{$m-feature1}: #{$m-feature1-val}) and (#{$m-feature2}: #{$m-feature2-val}){
+					@content
+				}
+			}
+		} @else if $m-feature2-val == ""{
+			@media #{$m-type} and (#{$m-feature1}: #{$m-feature1-val}){
+				@content
+			}
+		}
+	} @else if $m-feature2 != ""{
+		@if $m-feature2-val != ""{
+			@media (#{$m-feature1}: #{$m-feature1-val}) and (#{$m-feature2}: #{$m-feature2-val}){
+				@content
+			}
+		}
+	} @else if $m-feature2-val == ""{
+		@media (#{$m-feature1}: #{$m-feature1-val}){
+			@content
+		}
+	}
+}
+
+
+
+
+
+// prefixes/vendor
+@mixin vendor($prop, $val){
+	-webkit-#{$prop}: #{$val};
+	   -moz-#{$prop}: #{$val};
+	    -ms-#{$prop}: #{$val};
+	     -o-#{$prop}: #{$val};
+	        #{$prop}: #{$val};
+}
+
+// selection
+@mixin select($selAtr){
+	/*::selection{
+		$selAtr;
+	}
+	::-moz-selection{
+		$selAtr;
+	}*/
+}
+
+// gradients
+@mixin g-horizontal($startColor: white, $endColor: lightgrey) {
+	background-color: $endColor;
+	background-image  : -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor));
+	background-image  : -webkit-linear-gradient(left, $startColor, $endColor);
+	background-image  : -moz-linear-gradient(left, $startColor, $endColor);
+	background-image  : -ms-linear-gradient(left, $startColor, $endColor);
+	background-image  : -o-linear-gradient(left, $startColor, $endColor);
+	background-image  : linear-gradient(left, $startColor, $endColor);
+	background-repeat : repeat-x;
+}
+
+@mixin g-vertical($startColor: white, $endColor:  lightgrey) {
+	background-image  : -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
+	background-image  : -webkit-linear-gradient(top, $startColor, $endColor);
+	background-color  : $endColor;
+	background-image  : -moz-linear-gradient(top, $startColor, $endColor);
+	background-image  : -ms-linear-gradient(top, $startColor, $endColor);
+	background-image  : -o-linear-gradient(top, $startColor, $endColor);
+	background-image  : linear-gradient(top, $startColor, $endColor);
+	background-repeat : repeat-x;
+}
+
+@mixin g-directional($startColor: white, $endColor: lightgrey, $deg: 135deg) {
+	background-color  : $endColor;
+	background-image  : -moz-linear-gradient($deg, $startColor, $endColor);
+	background-image  : -ms-linear-gradient($deg, $startColor, $endColor);
+	background-image  : -webkit-linear-gradient($deg, $startColor, $endColor);
+	background-image  : -o-linear-gradient($deg, $startColor, $endColor);
+	background-image  : linear-gradient($deg, $startColor, $endColor);
+	background-repeat : repeat-x;
+}
+
+
+
+
+// borders
+@mixin b-radius($br-width-tl: "", $br-width-tr: "", $br-width-br: "", $br-width-bl: ""){
+	@if $br-width-tl != ""{
+		$br-width: "error";
+		@if $br-width-tr != ""{
+			@if $br-width-bl != "" and $br-width-br != ""{
+					$br-width: "multi";
+
+			} @else if $br-width-br == "" and $br-width-bl == ""{
+					$br-width: "doble";
+			}
+		} @else if $br-width-tr == ""{
+			@if $br-width-br == ""{
+				@if $br-width-bl == ""{
+					$br-width: "uni";
+				}
+			}
+		}
+
+		@if $br-width == "uni"{
+			@include vendor("border-radius", $br-width-tl);
+		} @else if $br-width == "doble"{
+			$br-width-tl: #{$br-width-tl} #{$br-width-tr};
+			@include vendor("border-radius", $br-width-tl);
+		} @else if $br-width == "multi"{
+			$br-width-tl: #{$br-width-tl} #{$br-width-tr} #{$br-width-br} #{$br-width-bl};
+			@include vendor("border-radius", $br-width-tl);
+		} @else if $br-width == "error"{
+			@if $br-width-tr == ""{
+				$br-width-tr: 0px;
+			}
+			@if $br-width-br == ""{
+				$br-width-br: 0px;
+			}
+			@if $br-width-bl == ""{
+				$br-width-bl: 0px;
+			}
+			$br-width-tl: #{$br-width-tl} #{$br-width-tr} #{$br-width-br} #{$br-width-bl};
+			@include vendor("border-radius", $br-width-tl);
+		}
+	} @else if $br-width-tl == ""{
+		&:before,
+		&:after{
+			content: "Error en el '@include b-radius'" !important;
+			width: 250px !important;
+			height: 50px !important;
+			font-size: 16px !important;
+			font-family: sans-serif !important;
+		}
+	}
+
+}
+
+
+// shaows
+@mixin t-shadow($ts-x, $ts-y, $ts-blur, $ts-color, $ts-inset){
+	$tx-arg: #{$ts-x} #{$ts-y} #{$ts-blur} #{$ts-color} #{$ts-inset};
+	@include vendor("text-shadow", $tx-arg);
+}
+
+@mixin b-shadow($bs-x, $bs-y, $bs-blur, $bs-color, $bs-inset){
+	$bx-arg: #{$bs-x} #{$bs-y} #{$bs-blur} #{$bs-color} #{$bs-inset};
+	@include vendor("box-shadow", $bx-arg);
+}
+
+
+// efects
+@mixin transition($transi-targ: "all", $transi-time: "2s", $transi: "ease"){
+	$transi-arg: #{$transi-targ} #{$transi-time} #{$transi};
+	@include vendor("transition", $transi-arg);
+}
+
+@mixin transform($transf-arg){
+	@include vendor("transform", $transf-arg);
+}
+
+@mixin resize($direction: both) {
+	resize : $direction;
+	overflow : auto;
+}
+
+@mixin rotate($deg) {
+	$ro-arg: rotate(#{$deg});
+	@include transform($ro-arg);
+}
+
+@mixin scale($ratio) {
+	$sca-arg: scale(#{$ratio});
+	@include transform($sca-arg);
+}
+
+@mixin skew($x: 0, $y: 0) {
+	$skew-arg: skew(#{$x}, #{$y});
+	@include transform($skew-arg);
+}
+
+@mixin translate($x: 0, $y: 0) {
+	$transl-arg: translate(#{$x}, #{$y});
+	@include transform($transl-arg);
+}
+
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+	$transl3d-arg: translate(#{$x}, #{$y}, #{$z});
+	@include transform($transl3d-arg);
+}
+
+// $box-size: (border-box | padding-box | content-box)
+@mixin box-sizing($box-size: "border-box"){
+	-webkit-box-sizing: #{$box-size};
+	-moz-box-sizing: #{$box-size};
+	box-sizing: #{$box-size};
+	//@include vendor("box-sizing", $box-size);
+}

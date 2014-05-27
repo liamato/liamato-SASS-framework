@@ -1,0 +1,64 @@
+//====================================
+//	$VARIABLES
+//====================================
+//
+//
+// Definimos y configuramos las variables
+//
+//
+
+//------------------------------------
+//	$BREAKPOINTS
+//------------------------------------
+//
+// Definimos los puntos los puntos en los que salta de medida una media query
+//
+//	@media (max-width: $bp1)
+//
+//
+
+$bp1: 30em;     //480px
+$bp2: 37.5em;   //600px
+$bp3: 48em;     //768px
+$bp4: 56.25em;  //900px
+$bp5: 68.75em;  //1100px
+
+
+//------------------------------------
+//	$DIR
+//------------------------------------
+//
+// Con esta variable definimos la ruta a las imagenes utilizadas en CSS
+//
+//	background-image:url("#{$img-dir}/bg.png");
+//
+
+// Imagenes en general
+$img-dir: "../../img/";
+
+// Imagenes en de carga de video
+$vid-dir: "../../img/vid/";
+
+// thumbnails
+$thumb-dir: "../../img/thumbnails/";
+
+// logo
+$logo-img: "../../img/logo.png";
+
+
+//------------------------------------
+//	$SELECT
+//------------------------------------
+//
+// $select
+//   Con esta variable decidimos si el ::select se aplica a toda la paguina
+//   y que estilos se le aplican
+//
+// $selecAtr
+//   Con esta variable definimos el css de ::select
+//
+
+$select: false;
+
+$selecAtr: 	(color, white),
+			(background-color, rgba(0,0,0,.6));

@@ -1,0 +1,212 @@
+//-------------------
+//	$font
+//-------------------
+$font: sans-serif !default;
+@if (map-get($font-map, default) != null){
+	@if (map-get($font-map, default) != nul){
+		@if (map-get($font-map, default) != 0){
+			@if (map-get($font-map, default) != ""){
+				$font: map-get($font-map, default);
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-def
+//-------------------
+$fs-def: 1em !default;
+@if (map-get($font-size, default) != null){
+	@if (map-get($font-size, default) != nul){
+		@if (map-get($font-size, default) != 0){
+			@if (map-get($font-size, default) != ""){
+				@if (map-get($font-size, default) != 16){
+					@if (map-get($font-size, default) != "16"){
+						$fs-def: #{map-get($font-size, default)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$font-code
+//-------------------
+$font-code: monospace, monospace !default;
+@if (map-get($font-map, code) != null){
+	@if (map-get($font-map, code) != nul){
+		@if (map-get($font-map, code) != 0){
+			@if (map-get($font-map, code) != ""){
+				$font-code: map-get($font-map, code);
+			}
+		}
+	}
+}
+$fs-code: $fs-def !default;
+@if (map-get($font-size, code) != null){
+	@if (map-get($font-size, code) != nul){
+		@if (map-get($font-size, code) != 0){
+			@if (map-get($font-size, code) != ""){
+				@if (map-get($font-size, code) != 16){
+					@if (map-get($font-size, code) != "16"){
+						$font-code: #{map-get($font-size, code)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-p
+//-------------------
+$fs-p: $fs-def !default;
+@if (map-get($font-size, p) != null){
+	@if (map-get($font-size, p) != nul){
+		@if (map-get($font-size, p) != 0){
+			@if (map-get($font-size, p) != ""){
+				@if (map-get($font-size, p) != 16){
+					@if (map-get($font-size, code) != "16"){
+						$fs-p: #{map-get($font-size, p)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-a
+//-------------------
+$fs-a: $fs-def !default;
+@if (map-get($font-size, a) != null){
+	@if (map-get($font-size, a) != nul){
+		@if (map-get($font-size, a) != 0){
+			@if (map-get($font-size, a) != ""){
+				@if (map-get($font-size, a) != 16){
+					@if (map-get($font-size, code) != "16"){
+						$fs-a: #{map-get($font-size, a)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h1
+//-------------------
+$fs-h1: 2em !default;
+@if (map-get($font-size, h1) != null){
+	@if (map-get($font-size, h1) != nul){
+		@if (map-get($font-size, h1) != 0){
+			@if (map-get($font-size, h1) != ""){
+				@if (map-get($font-size, h1) != 32){
+					@if (map-get($font-size, h1) != "32"){
+						$fs-h1: #{map-get($font-size, h1)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h2
+//-------------------
+$fs-h2: 1.5em !default;
+@if (map-get($font-size, h2) != null){
+	@if (map-get($font-size, h2) != nul){
+		@if (map-get($font-size, h2) != 0){
+			@if (map-get($font-size, h2) != ""){
+				@if (map-get($font-size, h2) != 24){
+					@if (map-get($font-size, h2) != "24"){
+						$fs-h2: #{map-get($font-size, h2)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h3
+//-------------------
+$fs-h3: 1.17em !default;
+@if (map-get($font-size, h3) != null){
+	@if (map-get($font-size, h3) != nul){
+		@if (map-get($font-size, h3) != 0){
+			@if (map-get($font-size, h3) != ""){
+				@if (map-get($font-size, h3) != 21){
+					@if (map-get($font-size, h3) != "21"){
+						$fs-h3: #{map-get($font-size, h3)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h4
+//-------------------
+$fs-h4: 1em !default;
+@if (map-get($font-size, h4) != null){
+	@if (map-get($font-size, h4) != nul){
+		@if (map-get($font-size, h4) != 0){
+			@if (map-get($font-size, h4) != ""){
+				@if (map-get($font-size, h4) != 18){
+					@if (map-get($font-size, h4) != "18"){
+						$fs-h4: #{map-get($font-size, h4)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h5
+//-------------------
+$fs-h5: 0.83em !default;
+@if (map-get($font-size, h5) != null){
+	@if (map-get($font-size, h5) != nul){
+		@if (map-get($font-size, h5) != 0){
+			@if (map-get($font-size, h5) != ""){
+				@if (map-get($font-size, h5) != 16){
+					@if (map-get($font-size, h5) != "16"){
+						$fs-h5: #{map-get($font-size, h5)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$fs-h6
+//-------------------
+$fs-h6: 0.67em !default;
+@if (map-get($font-size, h6) != null){
+	@if (map-get($font-size, h6) != nul){
+		@if (map-get($font-size, h6) != 0){
+			@if (map-get($font-size, h6) != ""){
+				@if (map-get($font-size, h6) != 14){
+					@if (map-get($font-size, h6) != "14"){
+						$fs-h6: #{map-get($font-size, h6)}px;
+					}
+				}
+			}
+		}
+	}
+}
+
+//-------------------
+//	$selection
+//-------------------
+@if ($select == true){
+	$selection: $selecAtr;
+} @else{
+	$selection: "";
+}

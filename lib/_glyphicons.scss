@@ -1,0 +1,229 @@
+/* Fuente de www.fontfabric.com */
+
+@font-face {
+    font-family: 'socialico-m';
+    src: url('../fonts/socialico/socialico_plus-webfont.eot');
+    src: url('../fonts/socialico/socialico_plus-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socialico/socialico_plus-webfont.woff') format('woff'),
+         url('../fonts/socialico/socialico_plus-webfont.ttf') format('truetype'),
+         url('../fonts/socialico/socialico_plus-webfont.svg#socialico_plusregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'socialico';
+    src: url('../fonts/socialico/socialico-webfont.eot');
+    src: url('../fonts/socialico/socialico-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socialico/socialico-webfont.woff') format('woff'),
+         url('../fonts/socialico/socialico-webfont.ttf') format('truetype'),
+         url('../fonts/socialico/socialico-webfont.svg#socialicoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//-------------------
+//  $glyphicon-bg
+//-------------------
+$glyphicon-bg: #fff !default;
+@if (map-get($colors, glyphicon-bg) != null){
+    @if (map-get($colors, glyphicon-bg) != nul){
+        @if (map-get($colors, glyphicon-bg) != 0){
+            @if (map-get($colors, glyphicon-bg) != ""){
+                @if (map-get($colors, glyphicon-bg) != white){
+                    @if (map-get($colors, glyphicon-bg) != "white"){
+                        @if (map-get($colors, glyphicon-bg) != rgb(255,255,255)){
+                            @if (map-get($colors, glyphicon-bg) != "rgb(255,255,255)"){
+                                @if (map-get($colors, glyphicon-bg) != rgba(255,255,255,1)){
+                                    @if (map-get($colors, glyphicon-bg) != "rgba(255,255,255,1)"){
+                                        @if (map-get($colors, glyphicon-bg) != #fff){
+                                            @if (map-get($colors, glyphicon-bg) != #ffffff){
+                                                @if (map-get($colors, glyphicon-bg) != "#fff"){
+                                                    @if (map-get($colors, glyphicon-bg) != "#ffffff"){
+                                                        $glyphicon-bg: #{map-get($colors, glyphicon-bg)};
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//-------------------
+//  @mixin
+//-------------------
+//
+// $m-social: key de $colors-social
+// $l: letra de content
+@mixin social-glyphico($m-social, $l){
+    font-size: 3em;
+    &:before{
+        font-family: socialico;
+        @include social(#{$m-social});
+        content: "#{$l}";
+        font-size: 1.7em;
+        background-color: $glyphicon-bg;
+        border-radius: 50%;
+        padding: 2px
+    }
+}
+@mixin social-glyphico-m($m-social-m, $l-m){
+    font-size: 3em;
+    &:before{
+        font-family: socialico-m;
+        @include social(#{$m-social-m});
+        content: "#{$l-m}";
+        font-size: 1.7em;
+        background-color: $glyphicon-bg;
+        border-radius: 50%;
+        padding: 2px
+    }
+}
+
+
+/* classe para el icono de facebook */
+.fb{
+    @include social-glyphico(fb, f)
+}
+
+/* classe para el icono de twiter */
+.tw{
+    @include social-glyphico(tw, l)
+}
+
+/* classe para el icono de google+ */
+.google{
+    @include social-glyphico-m(google, h)
+}
+
+/* classe para el icono de youtube */
+.youtube{
+    @include social-glyphico(youtube, x)
+}
+
+/* classe para el icono de vimeo */
+.vimeo{
+    @include social-glyphico(vimeo, v)
+}
+
+/* classe para el icono de instagram */
+.instagram{
+    @include social-glyphico-m(instagram, i)
+}
+
+/* classe para el icono de spotify */
+.spotify{
+    @include social-glyphico-m(spotify, s)
+}
+
+/* classe para el icono de soundcloud */
+.soundcloud{
+    @include social-glyphico-m(soundcloud, t)
+}
+
+/* classe para el icono de skype */
+.skype{
+    @include social-glyphico(skype, h)
+}
+
+/* classe para el icono de tumblr */
+.tumblr{
+    @include social-glyphico(tumblr, o)
+}
+
+/* classe para el icono de linkedin */
+.linkedin{
+    @include social-glyphico(linkedin, i)
+}
+
+/* classe para el icono de pinterest */
+.pinterest{
+    @include social-glyphico-m(pinterest, p)
+}
+
+/* classe para el icono de flickr */
+.flickr{
+    @include social-glyphico(flickr, n)
+}
+
+/* classe para el icono de foursquare */
+.foursquare{
+    @include social-glyphico(foursquare, "/")
+}
+
+/* classe para el icono de github */
+.github{
+    font-size: 3em;
+    &:before{
+        font-family: socialico-m;
+        content: "z";
+        font-size: 1.7em;
+        background-color: $glyphicon-bg;
+        border-radius: 50%;
+        padding: 2px;
+        color: #333;
+    }
+}
+
+
+/* classe con iconco de flecha derecha */
+.left{
+    font-size: 3em;
+    &:before{
+        content: "◀";
+        font-size: 1.7em;
+    }
+}
+
+/* classe con iconco de flecha izquierda */
+.right{
+    font-size: 3em;
+    &:before{
+        content: "▶";
+        font-size: 1.7em;
+    }
+}
+
+/* classe con iconco de estrella */
+.star{
+    font-size: 3em;
+    &:before{
+        content: "★";
+        font-size: 1.7em;
+    }
+}
+
+/* classe con iconco de check */
+.check{
+    font-size: 3em;
+    &:before{
+        content: "✔";
+        font-size: 1.7em;
+    }
+}
+
+/* classe con iconco de cruz */
+.cros{
+    font-size: 3em;
+    &:before{
+        content: "✖";
+        font-size: 1.7em;
+    }
+}
+
+/* classe con iconco de menu de movil */
+.pg-wraper{
+    font-size: 3em;
+    &:before{
+        content: "≣";
+        font-size: 1.7em;
+    }
+}
