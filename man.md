@@ -179,7 +179,7 @@ Utiliza 5 atributos:
  * Se pone el valor de la caracteristica anterior
  * Por ejemplo `$bp2`
 
-Las posibilidades de los atributos anteriores estan en [aqui](https://developer.mozilla.org/es/docs/CSS/Media_queries#Pseudo-BNF_(para_aquellos_a_quienes_les_gustan_esas_cosas&#41;)
+Las posibilidades de los atributos anteriores estan en [aqui](https://developer.mozilla.org/es/docs/CSS/Media_queries#Pseudo-BNF_(para_aquellos_a_quienes_les_gustan_esas_cosas))
 
 Aunque los mas abituales son:
 
